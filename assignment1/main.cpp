@@ -2,7 +2,7 @@
 #include <vector>
 using namespace std;
 
-int * returnLongestString(vector<string> vectorArray){
+vector<string> returnLongestString(vector<string> vectorArray){
     int numOfLetters = 0;
     vector<string> longestStrings;
     for(int i = 0; i < vectorArray.size(); i++){
@@ -20,9 +20,8 @@ int * returnLongestString(vector<string> vectorArray){
                 longestStrings.push_back(vectorArray.at(i));
             }
         }
-
     }
-    return longestStrings();
+    return longestStrings;
 }
 
 int main() {
@@ -46,7 +45,9 @@ int main() {
     //call longeststring method
     longestStringArray = returnLongestString(userInputtedStrings);
     //print out strings
-
+    for(int i=0; i < longestStringArray.size(); i++){
+        cout << longestStringArray.at(i) << ", ";
+    }
 
     return 0;
 }
