@@ -1,22 +1,21 @@
 #include <iostream>
 #include <vector>
 using namespace std;
+//George Paredes CSC 402
 
-vector<string> returnLongestString(vector<string> vectorArray){
-    int numOfLetters = vectorArray.at(0).length();
+vector<string> LongestLength(const vector<string> & vectorArray){
+    unsigned int numOfLetters = vectorArray.at(0).length();
     vector<string> longestStrings;
 
-    for(int i = 0; i < vectorArray.size(); i++){
-        if(vectorArray.at(i).length() >= numOfLetters){
-            if (vectorArray.at(i).length() > numOfLetters){
-                numOfLetters = vectorArray.at(i).length();
+    for(const auto & i : vectorArray){
+            if (i.length() > numOfLetters){
+                numOfLetters = i.length();
                 longestStrings.clear();
-                longestStrings.push_back(vectorArray.at(i));
+                longestStrings.push_back(i);
             }
-            else{
-                longestStrings.push_back(vectorArray.at(i));
+            else if (i.length() == numOfLetters) {
+                longestStrings.push_back(i);
             }
-        }
     }
     return longestStrings;
 }
@@ -32,14 +31,14 @@ int main() {
     }
 
     cout << endl << "User inputted string were:"<< endl;
-    for(int i = 0; i < userInputtedStrings.size(); i++){
-        cout << userInputtedStrings.at(i) << ", ";
+    for(const auto & userInputtedString : userInputtedStrings){
+        cout << userInputtedString << ", ";
     }
 
     cout << endl << endl << "The longest string/s are/is: "<< endl;
-    longestStringArray = returnLongestString(userInputtedStrings);
-    for(int i = 0; i < longestStringArray.size(); i++){
-        cout << longestStringArray.at(i) << ", ";
+    longestStringArray = LongestLength(userInputtedStrings);
+    for(const auto & i : longestStringArray){
+        cout << i << ", ";
     }
     return 0;
 }
