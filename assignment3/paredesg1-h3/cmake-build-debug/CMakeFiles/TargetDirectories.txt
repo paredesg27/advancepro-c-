@@ -1,0 +1,3 @@
+C:/Users/Georg/CLionProjects/paredesg1-h3/cmake-build-debug/CMakeFiles/paredesg1_h3.dir
+C:/Users/Georg/CLionProjects/paredesg1-h3/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/Georg/CLionProjects/paredesg1-h3/cmake-build-debug/CMakeFiles/rebuild_cache.dir
