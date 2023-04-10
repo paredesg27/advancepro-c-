@@ -1,7 +1,7 @@
 #include <iostream>
 #include <vector>
 #include <unordered_map>
-
+#include "Logger.h"
 using namespace std;
 
 enum class string_code {
@@ -98,7 +98,10 @@ int main() {
                 break;
             }
             case string_code::eDebugMode: {
+                Logger::instance().setDebug(true);
+                Logger::instance().log("test");
                 cout << "Set to debug mode" << endl;
+
                 break;
             }
 
