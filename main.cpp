@@ -1,9 +1,10 @@
 #include <iostream>
 #include <vector>
+#include <unordered_map>
 
 using namespace std;
 
-enum string_code {
+enum class string_code {
     eAdd,
     eTreat,
     ePrintPatient,
@@ -16,107 +17,120 @@ enum string_code {
     eLogNormal,
     eDebugMode,
     eLogDebug,
-    eHelp
+    eHelp,
+    eUnknown
 
 };
 
 string_code hashit(string const &inString) {
-    if (inString == "add") return eAdd;
-    if (inString == "treat") return eTreat;
-    if (inString == "print patient") return ePrintPatient;
-    if (inString == "print all treated patients") return ePrintAllTreatedPatients;
-    if (inString == "next patient") return eNextPatient;
-    if (inString == "print all triage patients") return ePrintAllTriagePatients;
-    if (inString == "god") return eYouAreGod;
-    if (inString == "print patients by doctor") return ePrintPatientsByDoctor;
-    if (inString == "add patient by file") return eAddPatientByFile;
-    if (inString == "log in normal mode") return eLogNormal;
-    if (inString == "debug mode") return eDebugMode;
-    if (inString == "log in debug mode") return eLogDebug;
-    if (inString == "help") return eHelp;
+    static const unordered_map<string, string_code> commands{
+            {"add",                        string_code::eAdd},
+            {"treat",                      string_code::eTreat},
+            {"print patient",              string_code::ePrintPatient},
+            {"print all treated patients", string_code::ePrintAllTreatedPatients},
+            {"next patient",               string_code::eNextPatient},
+            {"print all triage patients",  string_code::ePrintAllTriagePatients},
+            {"god",                        string_code::eYouAreGod},
+            {"print patients by doctor",   string_code::ePrintPatientsByDoctor},
+            {"add patient by file",        string_code::eAddPatientByFile},
+            {"log in normal mode",         string_code::eLogNormal},
+            {"debug mode",                 string_code::eDebugMode},
+            {"log in debug mode",          string_code::eLogDebug},
+            {"help",                       string_code::eHelp}
+    };
 
+    auto iter = commands.find(inString);
+    if (iter != commands.end()) {
+        return iter->second;
+    } else {
+        return string_code::eUnknown;
+    }
 }
 
 int main() {
     string inputString;
-    cout << "Enter an option(help for list of options and done to stop):" << endl;
-    while ((cin >> inputString) && inputString != "done") {
+    cout << "Enter an option(type 'help' for a list of options and 'done' to stop):" << endl;
+    while (getline(cin, inputString) && inputString != "done") {
         switch (hashit(inputString)) {
-            case eAdd: {
+            case string_code::eAdd: {
                 cout << "adding patient" << endl;
                 break;
             }
 
-            case eTreat: {
+            case string_code::eTreat: {
                 cout << "treating patient at top of triage order" << endl;
                 break;
             }
-            case ePrintPatient: {
+            case string_code::ePrintPatient: {
                 cout << "printing patient x" << endl;
                 break;
             }
 
-            case ePrintAllTreatedPatients: {
+            case string_code::ePrintAllTreatedPatients: {
                 cout << "Print all treated Patients" << endl;
                 break;
             }
-            case eNextPatient: {
+            case string_code::eNextPatient: {
                 cout << "Printing next patient" << endl;
                 break;
             }
 
-            case ePrintAllTriagePatients: {
+            case string_code::ePrintAllTriagePatients: {
                 cout << "Print all triage patients" << endl;
                 break;
             }
-            case eYouAreGod: {
+            case string_code::eYouAreGod: {
                 cout << "Healed the world" << endl;
                 break;
             }
 
-            case ePrintPatientsByDoctor: {
+            case string_code::ePrintPatientsByDoctor: {
                 cout << "Printing patients by Doctor x" << endl;
                 break;
             }
-            case eAddPatientByFile: {
+            case string_code::eAddPatientByFile: {
                 cout << "adding patients by file x" << endl;
                 break;
             }
 
-            case eLogNormal: {
+            case string_code::eLogNormal: {
                 cout << "Set logging to file, normal mode" << endl;
                 break;
             }
-            case eDebugMode: {
+            case string_code::eDebugMode: {
                 cout << "Set to debug mode" << endl;
                 break;
             }
 
-            case eLogDebug: {
+            case string_code::eLogDebug: {
                 cout << "Set logging to console, debug mode" << endl;
                 break;
             }
-            case eHelp: {
-                cout << "Here are all the accepted inputted values and their functions: " << endl;
+            case string_code::eHelp: {
+                cout << "\nHere are all the accepted inputted values and their functions(do not include \":\"):\n"
+                     << endl;
 
-                cout << "add:\n to add a patient to system " << endl;
-                cout << "treat:\n treat a patient in triage order " << endl;
-                cout << "print patient:\n prints out a specific patient report" << endl;
-                cout << "print all treated patients:\n prints out all treated patients  " << endl;
-                cout << "next patient:\n prints out the next  " << endl;
-                cout << "Here are all the accepted inputted values and their functions: " << endl;
-                cout << "Here are all the accepted inputted values and their functions: " << endl;
-                cout << "Here are all the accepted inputted values and their functions: " << endl;
-                cout << "Here are all the accepted inputted values and their functions: " << endl;
-                cout << "Here are all the accepted inputted values and their functions: " << endl;
-                cout << "Here are all the accepted inputted values and their functions: " << endl;
-                cout << "Here are all the accepted inputted values and their functions: " << endl;
-
+                cout << "add:\n to add a patient to system\n" << endl;
+                cout << "treat:\n treat a patient in triage order\n" << endl;
+                cout << "print patient:\n prints out a specific patient report\n" << endl;
+                cout << "print all treated patients:\n prints out all treated patients\n" << endl;
+                cout << "next patient:\n prints out the next patient to be treated\n" << endl;
+                cout << "print all triage patients:\n prints a report of all patients\n" << endl;
+                cout << "god:\n YOU MAGICALLY HEAL ALL THE PATIENTS\n" << endl;
+                cout << "print patients by doctor:\n prints out all patients of a doctor\n" << endl;
+                cout << "add patient by file:\n insert a file of patients to be added\n" << endl;
+                cout << "log in normal mode:\n logs system operations into a file in normal mode\n" << endl;
+                cout << "debug mode:\n turns on debugging mode\n" << endl;
+                cout << "log in debug mode:\n logs system operations to console in debug mode\n" << endl;
                 break;
             }
-
-
+            default: {
+                cout << "\nError: \"" << inputString
+                     << "\" is not a recognized command. Type \"help\" for a list of valid commands.\n" << endl;
+                break;
+            }
         }
+        cout << "Enter an option(type 'help' for a list of options and 'done' to stop):" << endl;
     }
     return 0;
 }
