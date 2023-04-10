@@ -1,0 +1,3 @@
+C:/Users/Georg/CLionProjects/HospitalAdmin/cmake-build-debug/CMakeFiles/HospitalAdmin.dir
+C:/Users/Georg/CLionProjects/HospitalAdmin/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/Georg/CLionProjects/HospitalAdmin/cmake-build-debug/CMakeFiles/rebuild_cache.dir

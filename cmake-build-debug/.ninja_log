@@ -1,0 +1,13 @@
+# ninja log v5
+0	443	7028584352239016	CMakeFiles/HospitalAdmin.dir/main.cpp.obj	3d81ec526639eb71
+445	948	7028584357255277	HospitalAdmin.exe	2a0866d93ed54955
+4	503	7028597327847290	CMakeFiles/HospitalAdmin.dir/main.cpp.obj	3d81ec526639eb71
+504	640	7028597329184271	HospitalAdmin.exe	2a0866d93ed54955
+4	437	7028597863731432	CMakeFiles/HospitalAdmin.dir/main.cpp.obj	3d81ec526639eb71
+438	563	7028597864956528	HospitalAdmin.exe	2a0866d93ed54955
+4	400	7028598063662947	CMakeFiles/HospitalAdmin.dir/main.cpp.obj	3d81ec526639eb71
+400	512	7028598064744208	HospitalAdmin.exe	2a0866d93ed54955
+3	406	7028616086689434	CMakeFiles/HospitalAdmin.dir/main.cpp.obj	3d81ec526639eb71
+407	552	7028616088117426	HospitalAdmin.exe	2a0866d93ed54955
+2	374	7028617194274905	CMakeFiles/HospitalAdmin.dir/main.cpp.obj	3d81ec526639eb71
+375	493	7028617195418674	HospitalAdmin.exe	2a0866d93ed54955
