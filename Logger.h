@@ -19,8 +19,8 @@ public:
         static Logger logger;
         return logger;
     }
-     static void setDebug(bool debug){
-        debugMode = debug;
+     static void setDebug(){
+         debugMode = !debugMode;
     }
 
     static void log(const string &message) {
@@ -28,8 +28,8 @@ public:
         if (debugMode){
             cout << message<<"IN DEBUG" << endl;
         } else{
-            cout << message << endl;
-            ofstream logFile;
+
+            ofstream logFile(fileName, ios::app);
             logFile.open(fileName, ios::app);
             if (logFile.is_open()) {
                 logFile << message << endl;
@@ -49,8 +49,7 @@ public:
 
     Logger() = default;
 };
-bool Logger::debugMode = false;
-string Logger::fileName = "log.txt";
+
 
 
 #endif //HOSPITALADMIN_LOGGER_H

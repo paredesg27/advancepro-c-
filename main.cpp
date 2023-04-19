@@ -2,6 +2,8 @@
 #include <vector>
 #include <unordered_map>
 #include "Logger.h"
+#include "NurseandDoctor.h"
+
 using namespace std;
 
 enum class string_code {
@@ -48,17 +50,20 @@ string_code hashit(string const &inString) {
 }
 
 int main() {
+    vector<Patient> unTreatedPatients;
+    vector<Patient> treatedPatients;
     string inputString;
     cout << "Enter an option(type 'help' for a list of options and 'done' to stop):" << endl;
+
     while (getline(cin, inputString) && inputString != "done") {
         switch (hashit(inputString)) {
             case string_code::eAdd: {
-                cout << "adding patient" << endl;
+                NurseandDoctor::addPatient(unTreatedPatients);
                 break;
             }
 
             case string_code::eTreat: {
-                cout << "treating patient at top of triage order" << endl;
+                NurseandDoctor::treatPatientHighestPriority(unTreatedPatients, treatedPatients);
                 break;
             }
             case string_code::ePrintPatient: {
@@ -98,8 +103,7 @@ int main() {
                 break;
             }
             case string_code::eDebugMode: {
-                Logger::instance().setDebug(true);
-                Logger::instance().log("test");
+//                Logger::setDebug();
                 cout << "Set to debug mode" << endl;
 
                 break;
@@ -133,7 +137,7 @@ int main() {
                 break;
             }
         }
-        cout << "Enter an option(type 'help' for a list of options and 'done' to stop):" << endl;
+        cout << "Enter an option(type 'help' for a list of options and 'done' to stop):"<<endl;
     }
     return 0;
 }
