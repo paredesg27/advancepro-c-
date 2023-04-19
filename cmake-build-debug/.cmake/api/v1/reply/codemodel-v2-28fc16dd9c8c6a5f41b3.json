@@ -39,7 +39,7 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "HospitalAdmin::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-HospitalAdmin-Debug-959bf9bd1d34a491764a.json",
+					"jsonFile" : "target-HospitalAdmin-Debug-2664fd09daadc7da3e0b.json",
 					"name" : "HospitalAdmin",
 					"projectIndex" : 0
 				}
@@ -49,8 +49,8 @@
 	"kind" : "codemodel",
 	"paths" : 
 	{
-		"build" : "C:/Users/Georg/CLionProjects/HospitalAdmin/cmake-build-debug",
-		"source" : "C:/Users/Georg/CLionProjects/HospitalAdmin"
+		"build" : "C:/Users/Georg/CLionProjects/advancepro-c-/cmake-build-debug",
+		"source" : "C:/Users/Georg/CLionProjects/advancepro-c-"
 	},
 	"version" : 
 	{
