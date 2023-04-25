@@ -1,7 +1,8 @@
 #include <iostream>
 #include <vector>
 #include <unordered_map>
-#include "Logger.h"
+#include "HospitalAdmin.h"
+#include "SystemAdmin.h"
 #include "NurseandDoctor.h"
 
 using namespace std;
@@ -81,7 +82,7 @@ int main() {
             }
 
             case string_code::ePrintAllTriagePatients: {
-                cout << "Print all triage patients" << endl;
+               HospitalAdmin::printTriageReport(unTreatedPatients);
                 break;
             }
             case string_code::eYouAreGod: {

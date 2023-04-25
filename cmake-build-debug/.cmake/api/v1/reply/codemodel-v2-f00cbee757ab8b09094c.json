@@ -49,8 +49,8 @@
 	"kind" : "codemodel",
 	"paths" : 
 	{
-		"build" : "C:/Users/Georg/CLionProjects/advancepro-c-/cmake-build-debug",
-		"source" : "C:/Users/Georg/CLionProjects/advancepro-c-"
+		"build" : "C:/Users/Georg/CLionProjects/HospitalAdmin/cmake-build-debug",
+		"source" : "C:/Users/Georg/CLionProjects/HospitalAdmin"
 	},
 	"version" : 
 	{
