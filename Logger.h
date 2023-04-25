@@ -19,15 +19,25 @@ public:
         static Logger logger;
         return logger;
     }
-     static void setDebug(){
-         debugMode = !debugMode;
+
+    static void setDebug() {
+        debugMode = !debugMode;
+        cout<<"debug is:" + debugMode <<endl;
+    }
+    static void loggingNormal(){
+        debugMode = false;
+        cout<<"Set logging in normal mode" <<endl;
+    }
+    static void loggingFile(){
+        debugMode = true;
+        cout<<"Set logging in debug mode" <<endl;
     }
 
     static void log(const string &message) {
 
-        if (debugMode){
-            cout << message<<"IN DEBUG" << endl;
-        } else{
+        if (debugMode) {
+            cout << message << "IN DEBUG" << endl;
+        } else {
 
             ofstream logFile(fileName, ios::app);
             logFile.open(fileName, ios::app);
@@ -49,7 +59,6 @@ public:
 
     Logger() = default;
 };
-
 
 
 #endif //HOSPITALADMIN_LOGGER_H

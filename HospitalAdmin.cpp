@@ -17,9 +17,14 @@ void HospitalAdmin::printTriageReport(const vector<Patient> &triageVector) {
         }
         ailements += "}";
 
-        Logger::instance().log("Name:" + patient.firstName
-        + "\n Priority: " + to_string(patient.priority)
-        + "\n Symptoms: " + ailements);
+        Logger::instance().log("firstName:" + patient.firstName
+        + "\n middleName: " + patient.middleName
+        +"\nlastName: " + patient.lastName
+        +"\nSuffix: " + patient.suffix
+        + "\nDoctor: " + patient.doctor
+        + "\nTreated: " + to_string(patient.treated)
+        + "\n Symptoms: " + ailements
+        + "\n Priority: " + to_string(patient.priority));
 
     }
 }

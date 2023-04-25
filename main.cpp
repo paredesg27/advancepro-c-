@@ -68,16 +68,16 @@ int main() {
                 break;
             }
             case string_code::ePrintPatient: {
-                cout << "printing patient x" << endl;
+               NurseandDoctor::printPatientReport(unTreatedPatients, treatedPatients);
                 break;
             }
 
             case string_code::ePrintAllTreatedPatients: {
-                cout << "Print all treated Patients" << endl;
+               NurseandDoctor::printTreatedPatients(treatedPatients);
                 break;
             }
             case string_code::eNextPatient: {
-                cout << "Printing next patient" << endl;
+               NurseandDoctor::nextPatient(unTreatedPatients);
                 break;
             }
 
@@ -100,18 +100,18 @@ int main() {
             }
 
             case string_code::eLogNormal: {
-                cout << "Set logging to file, normal mode" << endl;
+               Logger::loggingNormal();
                 break;
             }
             case string_code::eDebugMode: {
-//                Logger::setDebug();
-                cout << "Set to debug mode" << endl;
+                Logger::setDebug();
+                cout << "Set to debug mode," << endl;
 
                 break;
             }
 
             case string_code::eLogDebug: {
-                cout << "Set logging to console, debug mode" << endl;
+              Logger::loggingFile();
                 break;
             }
             case string_code::eHelp: {
@@ -140,5 +140,8 @@ int main() {
         }
         cout << "Enter an option(type 'help' for a list of options and 'done' to stop):"<<endl;
     }
+//    for (int i = 0; i < unTreatedPatients.size(); i++) {
+//        cout << unTreatedPatients[i].firstName << " ";
+//    }
     return 0;
 }

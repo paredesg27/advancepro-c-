@@ -25,12 +25,18 @@ struct Patient {
 
 class NurseandDoctor {
 private:
-    string test;
+
 
 public:
     static void addPatient(vector<Patient>& patientList);
 
     static void treatPatientHighestPriority(vector<Patient> &untreatedPatientList,vector<Patient> &treatedPatientList);
+
+    static void printPatientReport(vector<Patient> &untreatedPatientList, vector<Patient> &treatedPatientList);
+
+    static void printTreatedPatients(vector<Patient> &treatedPatientList);
+
+    static void nextPatient(vector<Patient> &untreatedPatientList);
 
 };
 
