@@ -165,5 +165,4 @@ CMakeFiles/HospitalAdmin.dir/main.cpp.obj: \
  C:/PROGRA~1/JetBrains/CLion\ 2022.3.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/codecvt.h \
  C:/PROGRA~1/JetBrains/CLion\ 2022.3.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/x86_64-w64-mingw32/bits/basic_file.h \
  C:/PROGRA~1/JetBrains/CLion\ 2022.3.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/x86_64-w64-mingw32/bits/c++io.h \
- C:/PROGRA~1/JetBrains/CLion\ 2022.3.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/fstream.tcc \
- C:\Users\Georg\CLionProjects\advancepro-c-\SystemAdmin.h
+ C:/PROGRA~1/JetBrains/CLion\ 2022.3.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/fstream.tcc

@@ -2,7 +2,6 @@
 #include <vector>
 #include <unordered_map>
 #include "HospitalAdmin.h"
-#include "SystemAdmin.h"
 #include "NurseandDoctor.h"
 
 using namespace std;
@@ -21,7 +20,8 @@ enum class string_code {
     eDebugMode,
     eLogDebug,
     eHelp,
-    eUnknown
+    eUnknown,
+    eDone
 
 };
 
@@ -39,7 +39,8 @@ string_code hashit(string const &inString) {
             {"log in normal mode",         string_code::eLogNormal},
             {"debug mode",                 string_code::eDebugMode},
             {"log in debug mode",          string_code::eLogDebug},
-            {"help",                       string_code::eHelp}
+            {"help",                       string_code::eHelp},
+            {"done",                       string_code::eDone}
     };
 
     auto iter = commands.find(inString);
@@ -53,13 +54,16 @@ string_code hashit(string const &inString) {
 int main() {
     vector<Patient> unTreatedPatients;
     vector<Patient> treatedPatients;
-    string inputString;
-    cout << "Enter an option(type 'help' for a list of options and 'done' to stop):" << endl;
-
-    while (getline(cin, inputString) && inputString != "done") {
+    string inputString = "help";
+    bool loop = true;
+    while (loop) {
+        cout << "Enter an option(type 'help' for a list of options and 'done' to stop):" << endl;
+        getline(cin, inputString);
         switch (hashit(inputString)) {
             case string_code::eAdd: {
                 NurseandDoctor::addPatient(unTreatedPatients);
+                cout << "added patient" << endl;
+
                 break;
             }
 
@@ -68,50 +72,62 @@ int main() {
                 break;
             }
             case string_code::ePrintPatient: {
-               NurseandDoctor::printPatientReport(unTreatedPatients, treatedPatients);
+                NurseandDoctor::printPatientReport(unTreatedPatients, treatedPatients);
+
                 break;
             }
 
             case string_code::ePrintAllTreatedPatients: {
-               NurseandDoctor::printTreatedPatients(treatedPatients);
+                NurseandDoctor::printTreatedPatients(treatedPatients);
                 break;
+
             }
             case string_code::eNextPatient: {
-               NurseandDoctor::nextPatient(unTreatedPatients);
+                NurseandDoctor::nextPatient(unTreatedPatients);
+
                 break;
             }
 
             case string_code::ePrintAllTriagePatients: {
-               HospitalAdmin::printTriageReport(unTreatedPatients);
+                HospitalAdmin::printTriageReport(unTreatedPatients);
+
                 break;
             }
             case string_code::eYouAreGod: {
-                cout << "Healed the world" << endl;
+               HospitalAdmin::youAreGod(unTreatedPatients, treatedPatients);
                 break;
             }
 
             case string_code::ePrintPatientsByDoctor: {
-                cout << "Printing patients by Doctor x" << endl;
+                HospitalAdmin::printPatientsByDoctor(unTreatedPatients, treatedPatients);
                 break;
             }
             case string_code::eAddPatientByFile: {
-                cout << "adding patients by file x" << endl;
+                HospitalAdmin::addPatientsByFile(unTreatedPatients);
+
                 break;
             }
 
             case string_code::eLogNormal: {
-               Logger::loggingNormal();
+                Logger::loggingNormal();
+
+
                 break;
             }
             case string_code::eDebugMode: {
                 Logger::setDebug();
-                cout << "Set to debug mode," << endl;
 
                 break;
             }
 
             case string_code::eLogDebug: {
-              Logger::loggingFile();
+                Logger::loggingFile();
+
+
+                break;
+            }
+            case string_code::eDone: {
+                loop = false;
                 break;
             }
             case string_code::eHelp: {
@@ -135,11 +151,14 @@ int main() {
             default: {
                 cout << "\nError: \"" << inputString
                      << "\" is not a recognized command. Type \"help\" for a list of valid commands.\n" << endl;
+
                 break;
             }
         }
-        cout << "Enter an option(type 'help' for a list of options and 'done' to stop):"<<endl;
+
     }
+
+
 //    for (int i = 0; i < unTreatedPatients.size(); i++) {
 //        cout << unTreatedPatients[i].firstName << " ";
 //    }
