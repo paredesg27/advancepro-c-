@@ -118,13 +118,13 @@ void HospitalAdmin::addPatientsByFile(vector<Patient> &untreatedPatients) {
              << endl;
 
         Logger::instance().log("firstName:" + patient.firstName
-                               + "\n middleName: " + patient.middleName
+                               + "\nmiddleName: " + patient.middleName
                                + "\nlastName: " + patient.lastName
                                + "\nSuffix: " + patient.suffix
                                + "\nDoctor: " + patient.doctor
                                + "\nTreated: " + to_string(patient.treated)
-                               + "\n Symptoms: " + aliments
-                               + "\n Priority: " + to_string(patient.priority));
+                               + "\nSymptoms: " + aliments
+                               + "\nPriority: " + to_string(patient.priority));
     }
 
     cout << "Added patients from file: " << filename << endl;
@@ -192,13 +192,13 @@ void HospitalAdmin::printPatientsByDoctor(vector<Patient> &untreatedPatients, ve
                         + "\nSymptoms: " + aliments
                         + "\nPriority: " + to_string(patient.priority) << endl;
                 Logger::instance().log("firstName:" + patient.firstName
-                                       + "\n middleName: " + patient.middleName
+                                       + "\nmiddleName: " + patient.middleName
                                        + "\nlastName: " + patient.lastName
                                        + "\nSuffix: " + patient.suffix
                                        + "\nDoctor: " + patient.doctor
                                        + "\nTreated: " + to_string(patient.treated)
-                                       + "\n Symptoms: " + aliments
-                                       + "\n Priority: " + to_string(patient.priority));
+                                       + "\nSymptoms: " + aliments
+                                       + "\nPriority: " + to_string(patient.priority));
             }
         }
         cout << "Treated patients:" << endl;

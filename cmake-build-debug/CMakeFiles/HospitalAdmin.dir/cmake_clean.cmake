@@ -5,8 +5,6 @@ file(REMOVE_RECURSE
   "CMakeFiles/HospitalAdmin.dir/Logger.cpp.obj.d"
   "CMakeFiles/HospitalAdmin.dir/NurseandDoctor.cpp.obj"
   "CMakeFiles/HospitalAdmin.dir/NurseandDoctor.cpp.obj.d"
-  "CMakeFiles/HospitalAdmin.dir/SystemAdmin.cpp.obj"
-  "CMakeFiles/HospitalAdmin.dir/SystemAdmin.cpp.obj.d"
   "CMakeFiles/HospitalAdmin.dir/main.cpp.obj"
   "CMakeFiles/HospitalAdmin.dir/main.cpp.obj.d"
   "HospitalAdmin.exe"

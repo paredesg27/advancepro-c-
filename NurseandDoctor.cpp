@@ -178,7 +178,7 @@ void NurseandDoctor::printPatientReport(vector<Patient> &untreatedPatientList, v
                     + "\nPriority: " + to_string(patient.priority) << endl;
 
             Logger::instance().log("firstName:" + patient.firstName
-                                   + "\n middleName: " + patient.middleName
+                                   + "\nmiddleName: " + patient.middleName
                                    + "\nlastName: " + patient.lastName
                                    + "\nSuffix: " + patient.suffix
                                    + "\nDoctor: " + patient.doctor
@@ -219,7 +219,7 @@ void NurseandDoctor::printTreatedPatients(vector<Patient> &treatedPatientList) {
                 + "\nPriority: " + to_string(patient.priority) << endl;
 
         Logger::instance().log("firstName:" + patient.firstName
-                               + "\n middleName: " + patient.middleName
+                               + "\nmiddleName: " + patient.middleName
                                + "\nlastName: " + patient.lastName
                                + "\nSuffix: " + patient.suffix
                                + "\nDoctor: " + patient.doctor

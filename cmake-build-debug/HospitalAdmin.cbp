@@ -102,12 +102,6 @@
 		<Unit filename="C:/Users/Georg/CLionProjects/advancepro-c-/NurseandDoctor.h">
 			<Option target="HospitalAdmin"/>
 		</Unit>
-		<Unit filename="C:/Users/Georg/CLionProjects/advancepro-c-/SystemAdmin.cpp">
-			<Option target="HospitalAdmin"/>
-		</Unit>
-		<Unit filename="C:/Users/Georg/CLionProjects/advancepro-c-/SystemAdmin.h">
-			<Option target="HospitalAdmin"/>
-		</Unit>
 		<Unit filename="C:/Users/Georg/CLionProjects/advancepro-c-/main.cpp">
 			<Option target="HospitalAdmin"/>
 		</Unit>

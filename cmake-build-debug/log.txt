@@ -1,0 +1,25 @@
+firstName:Mike
+ middleName: L
+lastName: Clark
+Suffix: Jr
+Doctor: Suess
+Treated: 0
+ Symptoms: {broken nose, excessive bleeding} 
+ Priority: 100
+firstName:Amy
+ middleName: N
+lastName: Clark
+Suffix: 
+Doctor: Pepper
+Treated: 0
+ Symptoms: {severe cough} 
+ Priority: 1
+firstName:Daniel
+ middleName: Lee
+lastName: Clark
+Suffix: 
+Doctor: House
+Treated: 0
+ Symptoms: {whiny} 
+ Priority: 9001
+Added patients from file: patients.txt

@@ -107,7 +107,7 @@ int main() {
             }
             case string_code::eDebugMode: {
                 Logger::setDebug();
-                break;
+                break;//done
             }
 
             case string_code::eLogDebug: {

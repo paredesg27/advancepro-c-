@@ -22,7 +22,7 @@ public:
 
     static void setDebug() {
         debugMode = !debugMode;
-        cout<<"debug is:" + debugMode <<endl;
+        cout << "debug is: " << boolalpha << debugMode << endl;
     }
     static void loggingNormal(){
         debugMode = false;
@@ -36,7 +36,7 @@ public:
     static void log(const string &message) {
 
         if (debugMode) {
-            cout << message << "IN DEBUG" << endl;
+            cout << message << " IN DEBUG" << endl;
         } else {
             ofstream logFile(fileName, ios::app);
             if (logFile.is_open()) {

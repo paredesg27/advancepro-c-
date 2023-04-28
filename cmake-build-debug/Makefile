@@ -200,30 +200,6 @@ NurseandDoctor.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\HospitalAdmin.dir\build.make CMakeFiles/HospitalAdmin.dir/NurseandDoctor.cpp.s
 .PHONY : NurseandDoctor.cpp.s
 
-SystemAdmin.obj: SystemAdmin.cpp.obj
-.PHONY : SystemAdmin.obj
-
-# target to build an object file
-SystemAdmin.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\HospitalAdmin.dir\build.make CMakeFiles/HospitalAdmin.dir/SystemAdmin.cpp.obj
-.PHONY : SystemAdmin.cpp.obj
-
-SystemAdmin.i: SystemAdmin.cpp.i
-.PHONY : SystemAdmin.i
-
-# target to preprocess a source file
-SystemAdmin.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\HospitalAdmin.dir\build.make CMakeFiles/HospitalAdmin.dir/SystemAdmin.cpp.i
-.PHONY : SystemAdmin.cpp.i
-
-SystemAdmin.s: SystemAdmin.cpp.s
-.PHONY : SystemAdmin.s
-
-# target to generate assembly for a file
-SystemAdmin.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\HospitalAdmin.dir\build.make CMakeFiles/HospitalAdmin.dir/SystemAdmin.cpp.s
-.PHONY : SystemAdmin.cpp.s
-
 main.obj: main.cpp.obj
 .PHONY : main.obj
 
@@ -266,9 +242,6 @@ help:
 	@echo ... NurseandDoctor.obj
 	@echo ... NurseandDoctor.i
 	@echo ... NurseandDoctor.s
-	@echo ... SystemAdmin.obj
-	@echo ... SystemAdmin.i
-	@echo ... SystemAdmin.s
 	@echo ... main.obj
 	@echo ... main.i
 	@echo ... main.s

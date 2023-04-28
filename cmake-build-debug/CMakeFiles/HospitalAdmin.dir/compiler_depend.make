@@ -484,9 +484,6 @@ CMakeFiles/HospitalAdmin.dir/NurseandDoctor.cpp.obj: C:/Users/Georg/CLionProject
   C:/Program\ Files/JetBrains/CLion\ 2022.3.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/x86_64-w64-mingw32/bits/c++io.h \
   C:/Program\ Files/JetBrains/CLion\ 2022.3.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/fstream.tcc
 
-CMakeFiles/HospitalAdmin.dir/SystemAdmin.cpp.obj: C:/Users/Georg/CLionProjects/advancepro-c-/SystemAdmin.cpp \
-  C:/Users/Georg/CLionProjects/advancepro-c-/SystemAdmin.h
-
 CMakeFiles/HospitalAdmin.dir/main.cpp.obj: C:/Users/Georg/CLionProjects/advancepro-c-/main.cpp \
   C:/Program\ Files/JetBrains/CLion\ 2022.3.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/iostream \
   C:/Program\ Files/JetBrains/CLion\ 2022.3.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/x86_64-w64-mingw32/bits/c++config.h \
@@ -682,8 +679,6 @@ C:/Program\ Files/JetBrains/CLion\ 2022.3.1/bin/mingw/lib/gcc/x86_64-w64-mingw32
 C:/Program\ Files/JetBrains/CLion\ 2022.3.1/bin/mingw/x86_64-w64-mingw32/include/stdio.h:
 
 C:/Program\ Files/JetBrains/CLion\ 2022.3.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/x86_64-w64-mingw32/bits/os_defines.h:
-
-C:/Users/Georg/CLionProjects/advancepro-c-/SystemAdmin.cpp:
 
 C:/Program\ Files/JetBrains/CLion\ 2022.3.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/x86_64-w64-mingw32/bits/c++config.h:
 
@@ -1034,7 +1029,5 @@ C:/Users/Georg/CLionProjects/advancepro-c-/Logger.h:
 C:/Program\ Files/JetBrains/CLion\ 2022.3.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/codecvt.h:
 
 C:/Users/Georg/CLionProjects/advancepro-c-/NurseandDoctor.cpp:
-
-C:/Users/Georg/CLionProjects/advancepro-c-/SystemAdmin.h:
 
 C:/Users/Georg/CLionProjects/advancepro-c-/main.cpp:

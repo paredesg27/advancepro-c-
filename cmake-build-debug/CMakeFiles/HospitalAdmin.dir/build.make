@@ -96,24 +96,10 @@ CMakeFiles/HospitalAdmin.dir/HospitalAdmin.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/HospitalAdmin.dir/HospitalAdmin.cpp.s"
 	"C:\PROGRA~1\JetBrains\CLion 2022.3.1\bin\mingw\bin\g++.exe" $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\Georg\CLionProjects\advancepro-c-\HospitalAdmin.cpp -o CMakeFiles\HospitalAdmin.dir\HospitalAdmin.cpp.s
 
-CMakeFiles/HospitalAdmin.dir/SystemAdmin.cpp.obj: CMakeFiles/HospitalAdmin.dir/flags.make
-CMakeFiles/HospitalAdmin.dir/SystemAdmin.cpp.obj: C:/Users/Georg/CLionProjects/advancepro-c-/SystemAdmin.cpp
-CMakeFiles/HospitalAdmin.dir/SystemAdmin.cpp.obj: CMakeFiles/HospitalAdmin.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Georg\CLionProjects\advancepro-c-\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/HospitalAdmin.dir/SystemAdmin.cpp.obj"
-	"C:\PROGRA~1\JetBrains\CLion 2022.3.1\bin\mingw\bin\g++.exe" $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/HospitalAdmin.dir/SystemAdmin.cpp.obj -MF CMakeFiles\HospitalAdmin.dir\SystemAdmin.cpp.obj.d -o CMakeFiles\HospitalAdmin.dir\SystemAdmin.cpp.obj -c C:\Users\Georg\CLionProjects\advancepro-c-\SystemAdmin.cpp
-
-CMakeFiles/HospitalAdmin.dir/SystemAdmin.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/HospitalAdmin.dir/SystemAdmin.cpp.i"
-	"C:\PROGRA~1\JetBrains\CLion 2022.3.1\bin\mingw\bin\g++.exe" $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\Georg\CLionProjects\advancepro-c-\SystemAdmin.cpp > CMakeFiles\HospitalAdmin.dir\SystemAdmin.cpp.i
-
-CMakeFiles/HospitalAdmin.dir/SystemAdmin.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/HospitalAdmin.dir/SystemAdmin.cpp.s"
-	"C:\PROGRA~1\JetBrains\CLion 2022.3.1\bin\mingw\bin\g++.exe" $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\Georg\CLionProjects\advancepro-c-\SystemAdmin.cpp -o CMakeFiles\HospitalAdmin.dir\SystemAdmin.cpp.s
-
 CMakeFiles/HospitalAdmin.dir/NurseandDoctor.cpp.obj: CMakeFiles/HospitalAdmin.dir/flags.make
 CMakeFiles/HospitalAdmin.dir/NurseandDoctor.cpp.obj: C:/Users/Georg/CLionProjects/advancepro-c-/NurseandDoctor.cpp
 CMakeFiles/HospitalAdmin.dir/NurseandDoctor.cpp.obj: CMakeFiles/HospitalAdmin.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Georg\CLionProjects\advancepro-c-\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/HospitalAdmin.dir/NurseandDoctor.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Georg\CLionProjects\advancepro-c-\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/HospitalAdmin.dir/NurseandDoctor.cpp.obj"
 	"C:\PROGRA~1\JetBrains\CLion 2022.3.1\bin\mingw\bin\g++.exe" $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/HospitalAdmin.dir/NurseandDoctor.cpp.obj -MF CMakeFiles\HospitalAdmin.dir\NurseandDoctor.cpp.obj.d -o CMakeFiles\HospitalAdmin.dir\NurseandDoctor.cpp.obj -c C:\Users\Georg\CLionProjects\advancepro-c-\NurseandDoctor.cpp
 
 CMakeFiles/HospitalAdmin.dir/NurseandDoctor.cpp.i: cmake_force
@@ -127,7 +113,7 @@ CMakeFiles/HospitalAdmin.dir/NurseandDoctor.cpp.s: cmake_force
 CMakeFiles/HospitalAdmin.dir/Logger.cpp.obj: CMakeFiles/HospitalAdmin.dir/flags.make
 CMakeFiles/HospitalAdmin.dir/Logger.cpp.obj: C:/Users/Georg/CLionProjects/advancepro-c-/Logger.cpp
 CMakeFiles/HospitalAdmin.dir/Logger.cpp.obj: CMakeFiles/HospitalAdmin.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Georg\CLionProjects\advancepro-c-\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/HospitalAdmin.dir/Logger.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Georg\CLionProjects\advancepro-c-\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/HospitalAdmin.dir/Logger.cpp.obj"
 	"C:\PROGRA~1\JetBrains\CLion 2022.3.1\bin\mingw\bin\g++.exe" $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/HospitalAdmin.dir/Logger.cpp.obj -MF CMakeFiles\HospitalAdmin.dir\Logger.cpp.obj.d -o CMakeFiles\HospitalAdmin.dir\Logger.cpp.obj -c C:\Users\Georg\CLionProjects\advancepro-c-\Logger.cpp
 
 CMakeFiles/HospitalAdmin.dir/Logger.cpp.i: cmake_force
@@ -142,7 +128,6 @@ CMakeFiles/HospitalAdmin.dir/Logger.cpp.s: cmake_force
 HospitalAdmin_OBJECTS = \
 "CMakeFiles/HospitalAdmin.dir/main.cpp.obj" \
 "CMakeFiles/HospitalAdmin.dir/HospitalAdmin.cpp.obj" \
-"CMakeFiles/HospitalAdmin.dir/SystemAdmin.cpp.obj" \
 "CMakeFiles/HospitalAdmin.dir/NurseandDoctor.cpp.obj" \
 "CMakeFiles/HospitalAdmin.dir/Logger.cpp.obj"
 
@@ -151,14 +136,13 @@ HospitalAdmin_EXTERNAL_OBJECTS =
 
 HospitalAdmin.exe: CMakeFiles/HospitalAdmin.dir/main.cpp.obj
 HospitalAdmin.exe: CMakeFiles/HospitalAdmin.dir/HospitalAdmin.cpp.obj
-HospitalAdmin.exe: CMakeFiles/HospitalAdmin.dir/SystemAdmin.cpp.obj
 HospitalAdmin.exe: CMakeFiles/HospitalAdmin.dir/NurseandDoctor.cpp.obj
 HospitalAdmin.exe: CMakeFiles/HospitalAdmin.dir/Logger.cpp.obj
 HospitalAdmin.exe: CMakeFiles/HospitalAdmin.dir/build.make
 HospitalAdmin.exe: CMakeFiles/HospitalAdmin.dir/linklibs.rsp
 HospitalAdmin.exe: CMakeFiles/HospitalAdmin.dir/objects1.rsp
 HospitalAdmin.exe: CMakeFiles/HospitalAdmin.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\Users\Georg\CLionProjects\advancepro-c-\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking CXX executable HospitalAdmin.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\Users\Georg\CLionProjects\advancepro-c-\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX executable HospitalAdmin.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\HospitalAdmin.dir\link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
