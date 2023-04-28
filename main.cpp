@@ -62,68 +62,56 @@ int main() {
         switch (hashit(inputString)) {
             case string_code::eAdd: {
                 NurseandDoctor::addPatient(unTreatedPatients);
-                cout << "added patient" << endl;
-
                 break;
-            }
+            }//bug causes it to go twice
 
             case string_code::eTreat: {
                 NurseandDoctor::treatPatientHighestPriority(unTreatedPatients, treatedPatients);
                 break;
-            }
+            }//done
             case string_code::ePrintPatient: {
                 NurseandDoctor::printPatientReport(unTreatedPatients, treatedPatients);
-
-                break;
+                break;//done
             }
 
             case string_code::ePrintAllTreatedPatients: {
                 NurseandDoctor::printTreatedPatients(treatedPatients);
                 break;
-
-            }
+            }//done
             case string_code::eNextPatient: {
                 NurseandDoctor::nextPatient(unTreatedPatients);
-
                 break;
-            }
+            }//done
 
             case string_code::ePrintAllTriagePatients: {
                 HospitalAdmin::printTriageReport(unTreatedPatients);
-
                 break;
-            }
+            }//done
             case string_code::eYouAreGod: {
                HospitalAdmin::youAreGod(unTreatedPatients, treatedPatients);
                 break;
-            }
+            }//done
 
             case string_code::ePrintPatientsByDoctor: {
                 HospitalAdmin::printPatientsByDoctor(unTreatedPatients, treatedPatients);
                 break;
-            }
+            }//done
             case string_code::eAddPatientByFile: {
                 HospitalAdmin::addPatientsByFile(unTreatedPatients);
-
                 break;
-            }
+            }//done
 
             case string_code::eLogNormal: {
                 Logger::loggingNormal();
-
-
                 break;
             }
             case string_code::eDebugMode: {
                 Logger::setDebug();
-
                 break;
             }
 
             case string_code::eLogDebug: {
                 Logger::loggingFile();
-
-
                 break;
             }
             case string_code::eDone: {

@@ -38,9 +38,7 @@ public:
         if (debugMode) {
             cout << message << "IN DEBUG" << endl;
         } else {
-
             ofstream logFile(fileName, ios::app);
-            logFile.open(fileName, ios::app);
             if (logFile.is_open()) {
                 logFile << message << endl;
                 logFile.close();
