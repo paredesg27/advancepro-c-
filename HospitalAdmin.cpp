@@ -69,6 +69,8 @@ void HospitalAdmin::addPatientsByFile(vector<Patient> &untreatedPatients, vector
             if (!addedPatient.firstName.empty() || !addedPatient.lastName.empty()) {
                 if (addedPatient.treated == true){
                     treatedPatients.push_back(addedPatient);
+                    createdPatients.push_back(addedPatient);
+                    addedPatient = Patient();
                 }
                 else{
                     untreatedPatients.push_back(addedPatient);
@@ -102,6 +104,8 @@ void HospitalAdmin::addPatientsByFile(vector<Patient> &untreatedPatients, vector
     if (!addedPatient.firstName.empty() || !addedPatient.lastName.empty()) {
         if (addedPatient.treated == true){
             treatedPatients.push_back(addedPatient);
+            createdPatients.push_back(addedPatient);
+            addedPatient = Patient();
         }
         else{
             untreatedPatients.push_back(addedPatient);

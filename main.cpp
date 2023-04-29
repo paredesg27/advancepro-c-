@@ -27,15 +27,15 @@ enum class string_code {
 
 string_code hashit(string const &inString) {
     static const unordered_map<string, string_code> commands{
-            {"add patient",                        string_code::eAdd},
-            {"treat patient",                      string_code::eTreat},
+            {"add patient",                string_code::eAdd},
+            {"treat patient",              string_code::eTreat},
             {"print patient",              string_code::ePrintPatient},
             {"print all treated patients", string_code::ePrintAllTreatedPatients},
             {"next patient",               string_code::eNextPatient},
             {"print all triage patients",  string_code::ePrintAllTriagePatients},
             {"god",                        string_code::eYouAreGod},
             {"print patients by doctor",   string_code::ePrintPatientsByDoctor},
-            {"add patients by file",        string_code::eAddPatientByFile},
+            {"add patients by file",       string_code::eAddPatientByFile},
             {"log in normal mode",         string_code::eLogNormal},
             {"debug mode",                 string_code::eDebugMode},
             {"log in debug mode",          string_code::eLogDebug},
@@ -63,7 +63,7 @@ int main() {
             case string_code::eAdd: {
                 NurseandDoctor::addPatient(unTreatedPatients);
                 break;
-            }//bug causes it to go twice
+            }//done
 
             case string_code::eTreat: {
                 NurseandDoctor::treatPatientHighestPriority(unTreatedPatients, treatedPatients);
@@ -88,7 +88,7 @@ int main() {
                 break;
             }//done
             case string_code::eYouAreGod: {
-               HospitalAdmin::youAreGod(unTreatedPatients, treatedPatients);
+                HospitalAdmin::youAreGod(unTreatedPatients, treatedPatients);
                 break;
             }//done
 
@@ -146,9 +146,12 @@ int main() {
 
     }
 
-
+//
 //    for (int i = 0; i < unTreatedPatients.size(); i++) {
 //        cout << unTreatedPatients[i].firstName << " ";
+//    }
+//    for (int i = 0; i < treatedPatients.size(); i++) {
+//        cout << treatedPatients[i].firstName << " ";
 //    }
     return 0;
 }
