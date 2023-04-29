@@ -3,7 +3,7 @@
 //
 
 
-#include <limits>
+
 #include "NurseandDoctor.h"
 
 void NurseandDoctor::addPatient(vector<Patient> &patientList) {
@@ -41,13 +41,15 @@ void NurseandDoctor::addPatient(vector<Patient> &patientList) {
     int number;
     cout << "Enter patient's priority:" << endl;
     while (!(cin >> number)) {
-        cout << "Invalid input. Please enter an integer value.\n" << endl;
+        cout << "Invalid input. Please enter an integer value." << endl;
         cin.clear();
         cin.ignore(numeric_limits<streamsize>::max(), '\n');
     }
     newPatient.priority = number;
 
     patientList.push_back(newPatient);
+    cin.ignore(numeric_limits<streamsize>::max(), '\n');
+
     ailements = "{";
     for (const auto &ailment: newPatient.ailments) {
         ailements += ailment + ", ";
@@ -76,22 +78,17 @@ void NurseandDoctor::treatPatientHighestPriority(vector<Patient> &untreatedPatie
         Logger::instance().log("No patients to treat.");
         return;
     }
-    Patient highestPriority = untreatedPatientList[0];
-    int highestPriorityIndex = 0;
-    for (int i = 0; i < untreatedPatientList.size(); i++) {
-        if (untreatedPatientList[i].priority > highestPriority.priority) {
-            highestPriority = untreatedPatientList[i];
-            highestPriorityIndex = i;
-        }
-    }
+    auto highestPriorityIter = max_element(untreatedPatientList.begin(), untreatedPatientList.end(), ComparePriority());
+    Patient highestPriority = *highestPriorityIter;
+    untreatedPatientList.erase(highestPriorityIter);
 
     highestPriority.treated = true;
     treatedPatientList.push_back(highestPriority);
-    untreatedPatientList.erase(untreatedPatientList.begin() + highestPriorityIndex);
 
     srand(time(nullptr));
     int sleepTime = rand() % 3 + 1;
     sleep(sleepTime);
+
     cout << "Treated " + highestPriority.firstName + " " + highestPriority.lastName + " with priorty of " +
             to_string(highestPriority.priority) << endl;
     Logger::instance().log("Treated " + highestPriority.firstName + highestPriority.lastName + "with priorty of " +
@@ -99,10 +96,7 @@ void NurseandDoctor::treatPatientHighestPriority(vector<Patient> &untreatedPatie
 }
 
 void NurseandDoctor::printPatientReport(vector<Patient> &untreatedPatientList, vector<Patient> &treatedPatientList) {
-    string firstName;
-    string middleName;
-    string lastName;
-    string doctor;
+    string firstName, middleName, lastName, doctor, patientFirstName, patientMiddleName, patientLastName, patientDoctor;
     bool patinetFound = false;
     string aliments;
 
@@ -117,12 +111,27 @@ void NurseandDoctor::printPatientReport(vector<Patient> &untreatedPatientList, v
     cout << "Enter patient's Doctor:\n";
     cin >> doctor;
 
-    cout << "Printing out Patient" + firstName + " " + lastName << endl;
-    Logger::instance().log("Printing out Patient" + firstName + " " + lastName);
+    transform(firstName.begin(), firstName.end(), firstName.begin(), ::tolower);
+    transform(middleName.begin(), middleName.end(), middleName.begin(), ::tolower);
+    transform(lastName.begin(), lastName.end(), lastName.begin(), ::tolower);
+    transform(doctor.begin(), doctor.end(), doctor.begin(), ::tolower);
+
+    cout << "Printing out Patient " + firstName + " " + lastName << endl;
+    Logger::instance().log("Printing out Patient " + firstName + " " + lastName);
 
     for (auto &patient: untreatedPatientList) {
-        if (patient.firstName == firstName && patient.middleName == middleName && patient.lastName == lastName &&
-            patient.doctor == doctor) {
+        patientFirstName = patient.firstName;
+        patientMiddleName = patient.middleName;
+        patientLastName = patient.lastName;
+        patientDoctor = patient.doctor;
+
+        transform(patientFirstName.begin(), patientFirstName.end(), patientFirstName.begin(), ::tolower);
+        transform(patientMiddleName.begin(), patientMiddleName.end(), patientMiddleName.begin(), ::tolower);
+        transform(patientLastName.begin(), patientLastName.end(), patientLastName.begin(), ::tolower);
+        transform(patientDoctor.begin(), patientDoctor.end(), patientDoctor.begin(), ::tolower);
+
+        if (patientFirstName == firstName && patientMiddleName == middleName && patientLastName == lastName &&
+            patientDoctor == doctor) {
             patinetFound = true;
             aliments = "{";
             for (const auto &ailment: patient.ailments) {
@@ -156,8 +165,18 @@ void NurseandDoctor::printPatientReport(vector<Patient> &untreatedPatientList, v
 
     // Search untreated patients
     for (auto &patient: treatedPatientList) {
-        if (patient.firstName == firstName && patient.middleName == middleName && patient.lastName == lastName &&
-            patient.doctor == doctor) {
+        patientFirstName = patient.firstName;
+        patientMiddleName = patient.middleName;
+        patientLastName = patient.lastName;
+        patientDoctor = patient.doctor;
+
+        transform(patientFirstName.begin(), patientFirstName.end(), patientFirstName.begin(), ::tolower);
+        transform(patientMiddleName.begin(), patientMiddleName.end(), patientMiddleName.begin(), ::tolower);
+        transform(patientLastName.begin(), patientLastName.end(), patientLastName.begin(), ::tolower);
+        transform(patientDoctor.begin(), patientDoctor.end(), patientDoctor.begin(), ::tolower);
+
+        if (patientFirstName == firstName && patientMiddleName == middleName && patientLastName == lastName &&
+            patientDoctor == doctor) {
             patinetFound = true;
             aliments = "{";
             for (const auto &ailment: patient.ailments) {
@@ -187,6 +206,8 @@ void NurseandDoctor::printPatientReport(vector<Patient> &untreatedPatientList, v
                                    + "\nPriority: " + to_string(patient.priority));
         }
     }
+    cin.ignore(numeric_limits<streamsize>::max(), '\n');
+
     if (patinetFound == false) {
         Logger::instance().log("Patient Search results in not found");
         cout << "Patient Not Found, try again" << endl;
@@ -232,23 +253,19 @@ void NurseandDoctor::printTreatedPatients(vector<Patient> &treatedPatientList) {
 void NurseandDoctor::nextPatient(vector<Patient> &untreatedPatientList) {
     string aliments;
     if (untreatedPatientList.empty()) {
+        cout << "No Patients to treat!!" << endl;
         Logger::instance().log("No patients.");
         return;
     }
-    Patient highestPriority = untreatedPatientList[0];
-    int highestPriorityIndex = 0;
-    int i = 0;
-    for (; i < untreatedPatientList.size(); i++) {
-        if (untreatedPatientList[i].priority > highestPriority.priority) {
-            highestPriority = untreatedPatientList[i];
-            highestPriorityIndex = i;
-        }
-    }
+
+    auto it = std::max_element(untreatedPatientList.begin(), untreatedPatientList.end(), ComparePriority());
+    int highestPriorityIndex = std::distance(untreatedPatientList.begin(), it);
+
     aliments = "{";
     for (const auto &ailment: untreatedPatientList[highestPriorityIndex].ailments) {
         aliments += ailment + ", ";
     }
-    if (highestPriority.ailments.empty()) {
+    if (untreatedPatientList[highestPriorityIndex].ailments.empty()) {
         aliments += "}";
     } else {
         aliments[aliments.length() - 2] = '}';

@@ -6,6 +6,9 @@
 #define HOSPITALADMIN_HOSPITALADMIN_H
 
 #include <variant>
+#include <sstream>
+#include <map>
+#include <functional>
 #include "NurseandDoctor.h"
 
 
@@ -15,7 +18,7 @@ private:
 public:
     static void printTriageReport(const vector<Patient> &triageVector);
 
-    static void addPatientsByFile(vector<Patient> &untreatedPatients);
+    static void addPatientsByFile(vector<Patient> &untreatedPatients, vector<Patient> &treatedPatients);
 
     static void youAreGod(vector<Patient> &untreatedPatients, vector<Patient> &treatedPatients);
 

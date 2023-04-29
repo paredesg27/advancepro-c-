@@ -23,20 +23,25 @@ public:
     static void setDebug() {
         debugMode = !debugMode;
         cout << "debug is: " << boolalpha << debugMode << endl;
+        Logger::instance().log("debug is " + string(debugMode ? "true" : "false"));
     }
-    static void loggingNormal(){
+
+    static void loggingNormal() {
         debugMode = false;
-        cout<<"Set logging in normal mode" <<endl;
+        cout << "Set logging in normal mode" << endl;
+        Logger::instance().log("Set logging in normal mode");
     }
-    static void loggingFile(){
+
+    static void loggingFile() {
         debugMode = true;
-        cout<<"Set logging in debug mode" <<endl;
+        cout << "Set logging in debug mode" << endl;
+        Logger::instance().log("Set logging in debug mode");
     }
 
     static void log(const string &message) {
 
         if (debugMode) {
-            cout << message << " IN DEBUG" << endl;
+            cout << message << endl << "LOGGING IN DEBUG MODE" << endl;
         } else {
             ofstream logFile(fileName, ios::app);
             if (logFile.is_open()) {
